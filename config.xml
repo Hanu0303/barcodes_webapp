@@ -7,13 +7,13 @@
         id = "co.nz.samrox.freeapp"
         version = "1.0.0">
 
-    <name>Anzor scanner demo</name>
+    <name>Anzor Scanner demo</name>
 
     <description>
-        A simple scanner that upload a file to scan barcode
+        A simple app to run media screens provided by SamRox Ltd.
     </description>
 
-    <author href="http://www.kodait.com" email="hanu@kodatechnology.com">
+    <author href="http://www.mibodycoach.com/" email="hanu@kodeltd.co.nz">
         SamRox team
     </author>
 
