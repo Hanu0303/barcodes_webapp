@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Anzor scanner demo</title>  
+
+  <script src="cordova.js"></script>  
+
+</head>
+<body>
+ Connecting...
+<script>
+ //document.addEventListener("deviceready", onDeviceReady, false);
+
+  checkConnection();
+  
+  function checkConnection() {
+  
+    var networkState = navigator.network.connection.type;
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+    
+    go_to_media_server();
+    
+}
+  function go_to_media_server () {
+  
+	if (states[networkState] != 'WiFi') {
+		document.write('Dont have WIFI, trying in 1 minute');
+		window.setInterval(function(){
+		  checkConnection();
+		}, 6000);
+
+	} else window.location = 'http://google.com';
+  
+  }
+  
+</script>
+
+
+<!-- <a href="http://www.samrox.co.nz/mediascreen/">Connect to media screen</a> -->
+
+
+
+</body>
+
+</html>
